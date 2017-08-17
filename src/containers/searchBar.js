@@ -1,6 +1,10 @@
 import React from 'react';
+import {connect} from 'react-redux';
+
+import {fetchWeather} from '../actions.js';
+
 //Don't export this class as a default
-export default class SearchBar extends React.Component {
+class SearchBar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -17,8 +21,8 @@ export default class SearchBar extends React.Component {
   }
 
   handleSubmit(event) {
-    alert("Jännää " + this.state.value);
     event.preventDefault();
+    fetchWeather(this.state.term);
   }
 
   render(){
@@ -46,3 +50,12 @@ export default class SearchBar extends React.Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return(
+    {fetchWeather},
+    dispatch
+  );
+}
+//Is  null necessary?
+export default connect(null, mapDispatchToProps)(SearchBar);
