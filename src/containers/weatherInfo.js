@@ -1,11 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-
-class WeatherInfo extends React.Component {
+export default class WeatherInfo extends React.Component {
 
   render() {
     return (
-      <p> test </p>
+      <div>
+        <h1> This is just for the test purpouse</h1>
+      </div>
     );
   }
 }
