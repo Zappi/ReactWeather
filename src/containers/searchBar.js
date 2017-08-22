@@ -55,5 +55,5 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({fetchWeather}, dispatch);
 }
 
-
+//Not having a mapStateToProps argument
 export default connect(null, mapDispatchToProps)(SearchBar);

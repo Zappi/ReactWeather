@@ -7,10 +7,7 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 export function fetchWeather(city) {
   const source = `${mainUrl}&q=${city},fi`;
-  const request = axios.get(source)
-  .then(function(response) {
-    console.log(response.data);
-  });
+  const request = axios.get(source);
 
   return {
     type: FETCH_WEATHER,

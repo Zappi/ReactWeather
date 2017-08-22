@@ -4,8 +4,7 @@ import { combineReducers } from 'redux'
 function weatherFetcher (state = [], action ) {
   switch(action.type) {
     case FETCH_WEATHER:
-      return state.concat([action.payload]);
-
+      return state.concat([action.payload.data]);
       }
     return state;
   }
@@ -14,4 +13,5 @@ function weatherFetcher (state = [], action ) {
 const rootReducer = combineReducers ({
   weatherFetcher: weatherFetcher
 });
+
 export default rootReducer;
