@@ -4,9 +4,10 @@ import { combineReducers } from 'redux'
 function weatherFetcher (state = [], action ) {
   switch(action.type) {
     case FETCH_WEATHER:
+      state=[];
       return state.concat([action.payload.data]);
       }
-    return state;
+      return state;
   }
 
 

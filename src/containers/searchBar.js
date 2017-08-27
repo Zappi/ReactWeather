@@ -23,6 +23,7 @@ class SearchBar extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.fetchWeather(this.state.value);
+    this.setState({value: ''});
   }
 
   render(){
