@@ -26,6 +26,10 @@ class SearchBar extends React.Component {
     this.setState({value: ''});
   }
 
+  handleButtonClickSubmit(event) {
+    this.handleSubmit(this.handleChange(event));
+  }
+
   render(){
     return(
       <form onSubmit={this.handleSubmit}>
@@ -40,7 +44,7 @@ class SearchBar extends React.Component {
                 onChange={this.handleChange}
                 />
                 <span className="input-group-btn">
-                  <button className="btn search-button btn-lg" type="button">
+                  <button className="btn search-button btn-lg" onClick={this.handleButtonClickSubmit} type="button">
                     <i className="glyphicon glyphicon-search"></i>
                   </button>
                 </span>

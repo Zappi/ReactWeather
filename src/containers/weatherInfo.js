@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../components/header';
+import DayListing from '../components/dayListing';
 
 class WeatherInfo extends React.Component {
 
@@ -15,7 +16,8 @@ class WeatherInfo extends React.Component {
     return (
 
       <div key={data.city.name}>
-      <Header cityName={data.city.name} temperature={temp[0]}/>
+      <Header cityName={data.city.name} temperature={temp[0]} description={data.list[0].weather[0].main}/>
+      <DayListing />
       </div>
       //<h3 key={data.city.name}> {data.city.name} and temperature {data.list[0].main.temp} Kelvins</h3>
     );
