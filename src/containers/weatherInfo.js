@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../components/header';
-import DayListing from '../components/dayListing';
+import DayListing from '../containers/dayListing';
 
 class WeatherInfo extends React.Component {
 

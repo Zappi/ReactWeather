@@ -11,3 +11,13 @@ body {
 .three-day-weatherListing {
   padding-top: 30px;
 }
+
+.table {
+  width: 60%;
+  margin: 0 auto;
+  color: white;
+}
+
+th {
+  text-align: center;
+}
