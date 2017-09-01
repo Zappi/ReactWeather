@@ -8,16 +8,14 @@ class WeatherInfo extends React.Component {
 
 
   showWeather(data) {
-    //Remove this console.log at some point
     console.log(data);
-
     const temp = data.list.map(weather => weather.main.temp-273);
 
     return (
-
+        //jatka jostain tästä, ammu parametreja daylistingiin ja huuda hoosiannaa!
       <div key={data.city.name}>
       <Header cityName={data.city.name} temperature={temp[0]} description={data.list[0].weather[0].main}/>
-      <DayListing />
+      <DayListing dataList={data.list}/>
       </div>
       //<h3 key={data.city.name}> {data.city.name} and temperature {data.list[0].main.temp} Kelvins</h3>
     );
