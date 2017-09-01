@@ -1,4 +1,5 @@
 import React from 'react';
+import DayInfo from '../components/dayInfo';
 
 class DayListing extends React.Component {
 
@@ -6,7 +7,7 @@ class DayListing extends React.Component {
 
     return(
       <tr key={weatherData.dt}>
-      <h2> {weatherData.dt} </h2>
+      <td> <DayInfo data={weatherData} /> </td>
       </tr>
     );
 
@@ -22,7 +23,7 @@ class DayListing extends React.Component {
           </tr>
           </thead>
           <tbody>
-           {this.props.dataList.slice(1,4).map(this.renderForecastes)}
+           {this.props.dataList.map(this.renderForecastes)}
           </tbody>
           </table>
       </div>
