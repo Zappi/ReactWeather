@@ -14,7 +14,7 @@ class DayListing extends React.Component {
     var forecastDays = [];
     //32 is the maxium amount of forecasts for 4 days from opeanweather api
     //STILL GIVES IN SOME SITUATIONS THE 4TH DAY FORECAST FIX THIS!!!
-    for(var i = 0; i < 31; i++) {
+    for(var i = 0; i < dataList.length; i++) {
       if(this.daySameAsToday(dataList[i])) {
         continue;
       }
@@ -34,7 +34,7 @@ class DayListing extends React.Component {
       }
     }
 
-    return forecastDays.map(this.renderForecasts);
+    return forecastDays.slice(0,5).map(this.renderForecasts);
 
   }
 
@@ -66,7 +66,7 @@ class DayListing extends React.Component {
         <table className="table">
           <thead>
             <tr>
-              <th><h3>3 Day Weather Forecast</h3></th>
+              <th><h3>5 Day Weather Forecast</h3></th>
             </tr>
           </thead>
           <tbody>
