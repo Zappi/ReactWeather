@@ -13,6 +13,7 @@ class DayListing extends React.Component {
     let d = new Date(dataList[0]*1000).toDateString();
     var forecastDays = [];
     //32 is the maxium amount of forecasts for 4 days from opeanweather api
+    //STILL GIVES IN SOME SITUATIONS THE 4TH DAY FORECAST FIX THIS!!!
     for(var i = 0; i < 31; i++) {
       if(this.daySameAsToday(dataList[i])) {
         continue;
@@ -24,7 +25,7 @@ class DayListing extends React.Component {
       if (maxTemp < dataList[i].main.temp_max) {
         maxTemp = dataList[i].main.temp_max;
       }
-      
+
       if(new Date(dataList[i].dt*1000).toDateString() != d && !this.daySameAsToday(dataList[i])) {
         forecastDays.push({dt: dataList[i].dt, weather: dataList[i].weather[0].main, maxTemperature: maxTemp, minTemperature: minTemp});
         d = new Date(dataList[i].dt*1000).toDateString();
@@ -53,7 +54,7 @@ class DayListing extends React.Component {
   renderForecasts(weatherData) {
     return(
       <tr key={weatherData.dt}>
-      <td><DayInfo data={weatherData} /></td>
+      <DayInfo data={weatherData} />
       </tr>
     );
 

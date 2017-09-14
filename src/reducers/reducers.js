@@ -2,6 +2,7 @@ import { FETCH_WEATHER } from '../actions/actions';
 import { combineReducers } from 'redux'
 
 function weatherFetcher (state = [], action ) {
+  
   switch(action.type) {
     case FETCH_WEATHER:
       state=[];

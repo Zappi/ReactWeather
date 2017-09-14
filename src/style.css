@@ -21,3 +21,13 @@ body {
 th {
   text-align: center;
 }
+
+#forecast-dayInfo {
+  margin-left: 120px;
+}
+
+#forecast-inline, #temperature-inline, #weekday-inline {
+  display: inline-block !important;
+  margin-right: 100px;
+  width: 100px;
+}
